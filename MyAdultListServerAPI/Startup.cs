@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyAdultList.Data;
 
 namespace MyAdultListServerAPI
 {
@@ -31,6 +32,7 @@ namespace MyAdultListServerAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "MyAdultListServerAPI", Version = "v1"});
             });
+            services.AddSingleton<IFileReader, FileReader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
