@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Models;
-using Restricting.Models;
+using Client.Models;
 
-namespace MyAdultList.Data
+
+namespace Client.Data
 {
     public interface IFileReader
     {
-        IList<Adult>GetAdults();
+        Task<IList<Adult>> GetAdults();
         
     }
 }
